@@ -1,0 +1,51 @@
+apiVersion: apps/v1beta2
+kind: StatefulSet
+metadata:
+  name: rabbitmq
+spec:
+  serviceName: rabbitmq-headless
+  selector:
+    matchLabels:
+      app: rabbitmq
+  template:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: rabbitmq
+    spec:
+      containers:
+      - name: rabbitmq
+        image: kairen/rabbitmq:3.6
+        env:
+          - name: CLUSTERED
+            value: "true"
+          - name: CLUSTER_WITH
+            value: "rabbitmq-0"
+          - name: RABBITMQ_SERVICE_DOMAIN
+            value: "rabbitmq-headless.default.svc.cluster.local"
+          - name: RABBITMQ_USERNAME
+            value: user
+          - name: RABBITMQ_PASSWORD
+            value: password
+        ports:
+          - name: epmd
+            containerPort: 4369
+          - name: ampq
+            containerPort: 5672
+          - name: management
+            containerPort: 15672
+          - name: node
+            containerPort: 25672
+        livenessProbe:
+          exec:
+            command: ["rabbitmqctl", "status"]
+          initialDelaySeconds: 60
+          timeoutSeconds: 5
+          failureThreshold: 6
+        readinessProbe:
+          exec:
+            command: ["rabbitmqctl", "status"]
+          initialDelaySeconds: 10
+          timeoutSeconds: 3
+          periodSeconds: 5
