@@ -5,9 +5,6 @@ metadata:
   labels:
     app: nginx
 spec:
-  tolerations:
-  - key: node-role.kubernetes.io/master
-    effect: NoSchedule
   selector:
     matchLabels:
       app: nginx

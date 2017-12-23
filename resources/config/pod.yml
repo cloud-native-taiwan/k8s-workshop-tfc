@@ -20,8 +20,8 @@ spec:
     #     name: simple-conf
     imagePullPolicy: IfNotPresent
     volumeMounts:
-    - name: secret
-      mountPath: "/etc/password"
+    - name: simple-conf
+      mountPath: "/etc/test"
       readOnly: true
   restartPolicy: Always
   volumes:
