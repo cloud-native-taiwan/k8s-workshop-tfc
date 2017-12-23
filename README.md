@@ -12,3 +12,14 @@ You will need Mac OSX or Linux with at least `8GB RAM` and `30GB free disk space
 * Etcd: v3.2.9
 * Calico: v2.6.2
 * Docker: v17.10.0-ce
+
+To build cluster:
+```sh
+$ git clone https://github.com/kairen/tfc-workshop.git
+$ vagrant up
+$ vagrant ssh master1
+$ sudo su -
+$ cd /vagrant/ansible
+$ ansible-playbook cluster.yml
+$ ansible-playbook addons.yml
+```
