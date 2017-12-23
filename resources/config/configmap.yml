@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: simple-conf
+data:
+  TEST_ENV: "Hello configmap!"
+  test.conf: |
+  [test]
+  run_once = true

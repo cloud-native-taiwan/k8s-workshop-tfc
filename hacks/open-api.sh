@@ -3,7 +3,7 @@
 # Program: Open API
 # History: 2017/12/23 Kyle.b Release
 
-set -xu
+set -eu
 
 cat <<EOF | kubectl create -f -
 apiVersion: rbac.authorization.k8s.io/v1beta1

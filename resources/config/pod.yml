@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox
+  namespace: default
+spec:
+  containers:
+  - name: busybox
+    image: busybox
+    command: ["/bin/sh", "-c"]
+    args: ["echo Hello, busybox!; sleep 3000;"]
+    env:
+    - name: TEST_ENV
+      valueFrom:
+        configMapKeyRef:
+          name: simple-conf
+          key: TEST_ENV
+    # envFrom:
+    # - configMapRef:
+    #     name: simple-conf
+    imagePullPolicy: IfNotPresent
+    volumeMounts:
+    - name: secret
+      mountPath: "/etc/password"
+      readOnly: true
+  restartPolicy: Always
+  volumes:
+  - name: simple-conf
+    configMap:
+      name: simple-conf
+      key: test.conf
