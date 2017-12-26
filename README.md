@@ -1,6 +1,9 @@
 # Kubernetes Workshop
 This repository is based on Kubernetes workshop. Show a simple Kubernetes cluster and resources. This directory contains a number of examples of how to run real applications with Kubernetes to help you understand how to work.
 
+Slides:
+- [帶著藍船舵(Kubernetes)初航雲海吧!](https://goo.gl/ZeWYfz)
+
 **Requirements**
 
 You will need a environment with at least `8GB RAM` and `30GB free disk space` available:
