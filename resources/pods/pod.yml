@@ -7,7 +7,7 @@ spec:
   containers:
   - image: busybox
     command: ["/bin/sh", "-c"]
-    args: ["echo Hello, busybox!; sleep 3000;"]
+    args: ["echo Hello, busybox!; sleep 3600;"]
     imagePullPolicy: IfNotPresent
     name: busybox
   restartPolicy: Always

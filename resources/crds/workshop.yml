@@ -1,0 +1,8 @@
+apiVersion: kairen.io/v1alpha1
+kind: WorkShop
+metadata:
+  name: tfc-workshop
+spec:
+  speaker: kairen
+  workTime: 3hr
+  topicName: "kubernetes 101"

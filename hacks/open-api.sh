@@ -26,5 +26,5 @@ kubectl create clusterrolebinding dashboard --clusterrole cluster-admin --servic
 
 echo -n "
 Get token: kubectl -n kube-system get sa dashboard -o yaml
-Access url: https://192.16.35.9:6443/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/
+Access url: https://<Master1_IP>:6443/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/
 "
