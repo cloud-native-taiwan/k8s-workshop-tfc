@@ -1,4 +1,4 @@
-# Kubernetes Workshop
+# Kubernetes Workshop on TFC
 This repository is based on Kubernetes workshop. Show a simple Kubernetes cluster and resources. This directory contains a number of examples of how to run real applications with Kubernetes to help you understand how to work.
 
 Slides:
@@ -140,6 +140,6 @@ $ ansible-playbook addons.yml
 ## Run examples
 In `master1` node to get workshop examples from [k8s-workshop](https://github.com/kairen/k8s-workshop.git):
 ```sh
-$ git clone https://github.com/kairen/k8s-workshop.git
-$ cd k8s-workshop/resources
+$ git clone https://github.com/kairen/k8s-workshop-tfc.git
+$ cd k8s-workshop-tfc/resources
 ```
