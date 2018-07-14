@@ -5,5 +5,5 @@ metadata:
 data:
   TEST_ENV: "Hello configmap!"
   test.conf: |
-  [test]
-  run_once = true
+    [test]
+    run_once = true
